@@ -1,0 +1,3 @@
+nohup: ignoring input
+psql:services/pg_denormalized/schema-indexes.sql:5: NOTICE:  word is too long to be indexed
+DETAIL:  Words longer than 2047 characters are ignored.
