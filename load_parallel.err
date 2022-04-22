@@ -1,0 +1,5 @@
+nohup: ignoring input
+1532.10user 316.64system 1:15:53elapsed 40%CPU (0avgtext+0avgdata 17284maxresident)k
+98392inputs+105496outputs (0major+68466minor)pagefaults 0swaps
+26891.26user 1438.52system 2:04:01elapsed 380%CPU (0avgtext+0avgdata 4492504maxresident)k
+23522960inputs+190368outputs (27major+963804449minor)pagefaults 0swaps

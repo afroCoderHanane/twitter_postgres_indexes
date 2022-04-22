@@ -1,0 +1,2042 @@
+================================================================================
+load pg_denormalized
+================================================================================
+/data/tweets/geoTwitter21-01-01.zip
+psql: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 3037?
+/data/tweets/geoTwitter21-01-04.zip
+psql: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 3037?
+/data/tweets/geoTwitter21-01-02.zip
+psql: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 3037?
+/data/tweets/geoTwitter21-01-10.zip
+psql: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 3037?
+/data/tweets/geoTwitter21-01-05.zip
+psql: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 3037?
+/data/tweets/geoTwitter21-01-03.zip
+psql: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 3037?
+/data/tweets/geoTwitter21-01-07.zip
+psql: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 3037?
+/data/tweets/geoTwitter21-01-08.zip
+psql: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 3037?
+/data/tweets/geoTwitter21-01-06.zip
+psql: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 3037?
+/data/tweets/geoTwitter21-01-09.zip
+psql: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 3037?
+Command exited with non-zero status 10
+0.67user 0.34system 0:00.30elapsed 334%CPU (0avgtext+0avgdata 17668maxresident)k
+120inputs+1960outputs (0major+52175minor)pagefaults 0swaps
+================================================================================
+load pg_normalized_batch
+================================================================================
+Traceback (most recent call last):
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 8728?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "load_tweets_batch.py", line 412, in <module>
+    connection = engine.connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3210, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3289, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3260, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 2107, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 8728?
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+Traceback (most recent call last):
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 8728?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "load_tweets_batch.py", line 412, in <module>
+    connection = engine.connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3210, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3289, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3260, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 2107, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 8728?
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+Traceback (most recent call last):
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 8728?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "load_tweets_batch.py", line 412, in <module>
+    connection = engine.connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3210, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3289, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3260, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 2107, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 8728?
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+Traceback (most recent call last):
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 8728?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "load_tweets_batch.py", line 412, in <module>
+    connection = engine.connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3210, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3289, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3260, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 2107, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 8728?
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+Traceback (most recent call last):
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 8728?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "load_tweets_batch.py", line 412, in <module>
+    connection = engine.connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3210, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3289, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3260, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 2107, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 8728?
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+Traceback (most recent call last):
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 8728?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "load_tweets_batch.py", line 412, in <module>
+    connection = engine.connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3210, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3289, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3260, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 2107, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 8728?
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+Traceback (most recent call last):
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 8728?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "load_tweets_batch.py", line 412, in <module>
+    connection = engine.connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3210, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3289, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3260, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 2107, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 8728?
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+Traceback (most recent call last):
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 8728?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "load_tweets_batch.py", line 412, in <module>
+    connection = engine.connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3210, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3289, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3260, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 2107, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 8728?
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+Traceback (most recent call last):
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 8728?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "load_tweets_batch.py", line 412, in <module>
+    connection = engine.connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3210, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3289, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3260, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 2107, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 8728?
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+Traceback (most recent call last):
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 8728?
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "load_tweets_batch.py", line 412, in <module>
+    connection = engine.connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3210, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3289, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3260, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 2107, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 8728?
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+Command exited with non-zero status 10
+3.55user 0.51system 0:00.67elapsed 604%CPU (0avgtext+0avgdata 43576maxresident)k
+1392inputs+2696outputs (4major+157590minor)pagefaults 0swaps
+================================================================================
+load pg_denormalized
+================================================================================
+/data/tweets/geoTwitter21-01-06.zip
+psql: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+/data/tweets/geoTwitter21-01-04.zip
+psql: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+/data/tweets/geoTwitter21-01-01.zip
+psql: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+/data/tweets/geoTwitter21-01-03.zip
+psql: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+/data/tweets/geoTwitter21-01-05.zip
+psql: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+/data/tweets/geoTwitter21-01-02.zip
+psql: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+/data/tweets/geoTwitter21-01-08.zip
+psql: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+/data/tweets/geoTwitter21-01-07.zip
+psql: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+/data/tweets/geoTwitter21-01-10.zip
+psql: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+/data/tweets/geoTwitter21-01-09.zip
+psql: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+Command exited with non-zero status 10
+0.69user 0.34system 0:00.36elapsed 283%CPU (0avgtext+0avgdata 17632maxresident)k
+56inputs+2176outputs (0major+52076minor)pagefaults 0swaps
+================================================================================
+load pg_normalized_batch
+================================================================================
+Traceback (most recent call last):
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "load_tweets_batch.py", line 412, in <module>
+    connection = engine.connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3210, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3289, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3260, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 2107, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+Traceback (most recent call last):
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "load_tweets_batch.py", line 412, in <module>
+    connection = engine.connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3210, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3289, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3260, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 2107, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+Traceback (most recent call last):
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "load_tweets_batch.py", line 412, in <module>
+    connection = engine.connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3210, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3289, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3260, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 2107, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+Traceback (most recent call last):
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "load_tweets_batch.py", line 412, in <module>
+    connection = engine.connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3210, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3289, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3260, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 2107, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+Traceback (most recent call last):
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "load_tweets_batch.py", line 412, in <module>
+    connection = engine.connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3210, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3289, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3260, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 2107, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+Traceback (most recent call last):
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "load_tweets_batch.py", line 412, in <module>
+    connection = engine.connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3210, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3289, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3260, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 2107, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+Traceback (most recent call last):
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "load_tweets_batch.py", line 412, in <module>
+    connection = engine.connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3210, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3289, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3260, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 2107, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+Traceback (most recent call last):
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "load_tweets_batch.py", line 412, in <module>
+    connection = engine.connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3210, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3289, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3260, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 2107, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+Traceback (most recent call last):
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "load_tweets_batch.py", line 412, in <module>
+    connection = engine.connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3210, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3289, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3260, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 2107, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+Traceback (most recent call last):
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "load_tweets_batch.py", line 412, in <module>
+    connection = engine.connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3210, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3289, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3260, in _wrap_pool_connect
+    e, dialect, self
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 2107, in _handle_dbapi_exception_noconnection
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 3256, in _wrap_pool_connect
+    return fn()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 310, in connect
+    return _ConnectionFairy._checkout(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 868, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 476, in checkout
+    rec = pool._do_get()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 146, in _do_get
+    self._dec_overflow()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 256, in _create_connection
+    return _ConnectionRecord(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 371, in __init__
+    self.__connect()
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 666, in __connect
+    pool.logger.debug("Error on connect(): %s", e)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 207, in raise_
+    raise exception
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/pool/base.py", line 661, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/create.py", line 590, in connect
+    return dialect.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 597, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+  File "/home/AGbadamassi23/.local/lib/python3.6/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+Command exited with non-zero status 10
+3.73user 0.58system 0:00.70elapsed 609%CPU (0avgtext+0avgdata 43504maxresident)k
+104inputs+2408outputs (0major+157555minor)pagefaults 0swaps
+================================================================================
+load pg_denormalized
+================================================================================
+parallel: Error: Output is incomplete. Cannot append to buffer file in /tmp. Is the disk full?
+parallel: Error: Change $TMPDIR with --tmpdir or use --compress.
+Warning: unable to close filehandle properly: Disk quota exceeded during global destruction.
+Command exited with non-zero status 255
+3.14user 3.48system 9:07:05elapsed 0%CPU (0avgtext+0avgdata 17744maxresident)k
+1016inputs+739672outputs (6major+19759minor)pagefaults 0swaps
+================================================================================
+load pg_normalized_batch
+================================================================================
+parallel: Error: Output is incomplete. Cannot append to buffer file in /tmp. Is the disk full?
+parallel: Error: Change $TMPDIR with --tmpdir or use --compress.
+Warning: unable to close filehandle properly: Disk quota exceeded during global destruction.
+Command exited with non-zero status 255
+0.15user 0.14system 0:00.28elapsed 105%CPU (0avgtext+0avgdata 17644maxresident)k
+3728inputs+0outputs (1major+17920minor)pagefaults 0swaps
